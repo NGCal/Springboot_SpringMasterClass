@@ -27,7 +27,7 @@ public class AspectClass {
         LOG.info("Method {} throw exception {}", joinPoint, exception);
     }
 
-    @Around(value = "com.springbasics.web.springboot.Aspects.PointCuts.dataPointCut()")
+    @Around(value = "com.springbasics.web.springboot.Aspects.PointCuts.trackTimePointCut()")
     private void trackTime(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         long startTime = System.currentTimeMillis();
         proceedingJoinPoint.proceed();

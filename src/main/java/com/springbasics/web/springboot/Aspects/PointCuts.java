@@ -10,4 +10,8 @@ public class PointCuts {
     @Pointcut("execution(* com.springbasics.web.springboot.Data.*.*(..))")
     public void dataPointCut() {
     }
+
+    @Pointcut("@annotation(com.springbasics.web.springboot.Aspects.TrackTime)")
+    public void trackTimePointCut() {
+    }
 }
