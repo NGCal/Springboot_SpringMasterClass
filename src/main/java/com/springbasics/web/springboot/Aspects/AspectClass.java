@@ -12,22 +12,22 @@ import org.springframework.context.annotation.Configuration;
 public class AspectClass {
     Logger LOG = LoggerFactory.getLogger(this.getClass());
 
-    @Before("execution(* com.springbasics.web.springboot.Bussines.*.*(..))")
+    @Before("com.springbasics.web.springboot.Aspects.PointCuts.businessPointCut()")
     public void checkBeforeMethod(JoinPoint joinPoint) {
         LOG.info("This is a business service call {}", joinPoint);
     }
 
-    @AfterReturning(value = "execution(* com.springbasics.web.springboot.Bussines.*.*(..))", returning = "result")
+    @AfterReturning(value = "com.springbasics.web.springboot.Aspects.PointCuts.businessPointCut()", returning = "result")
     private void checkAfterMethod(JoinPoint joinPoint, Object result) {
         LOG.info("Method {} returned {}", joinPoint, result);
     }
 
-    @AfterThrowing(value = "execution(* com.springbasics.web.springboot.Bussines.*.*(..))", throwing = "exception")
+    @AfterThrowing(value = "com.springbasics.web.springboot.Aspects.PointCuts.businessPointCut()", throwing = "exception")
     private void checkForException(JoinPoint joinPoint, Exception exception) {
         LOG.info("Method {} throw exception {}", joinPoint, exception);
     }
 
-    @Around(value = "execution(* com.springbasics.web.springboot.Bussines.*.*(..))")
+    @Around(value = "com.springbasics.web.springboot.Aspects.PointCuts.dataPointCut()")
     private void trackTime(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         long startTime = System.currentTimeMillis();
         proceedingJoinPoint.proceed();
