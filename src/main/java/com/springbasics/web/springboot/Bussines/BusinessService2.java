@@ -13,4 +13,9 @@ public class BusinessService2 {
     public String getDAO() {
         return dAO.retrieveData();
     }
+
+    public int getDAOLength() {
+
+        return dAO.retrieveData().length();
+    }
 }

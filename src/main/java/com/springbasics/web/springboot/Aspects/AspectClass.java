@@ -25,4 +25,6 @@ public class AspectClass {
     private void checkForException(JoinPoint joinPoint, Exception exception) {
         LOG.info("Method {} throw exception {}", joinPoint, exception);
     }
+
+
 }

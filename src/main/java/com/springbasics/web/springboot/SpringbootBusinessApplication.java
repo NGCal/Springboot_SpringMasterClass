@@ -29,6 +29,7 @@ public class SpringbootBusinessApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		LOG.info("Business Service1 DAO {}", businessService1.getDAO());
 		LOG.info("Business Service2 DAO {}", businessService2.getDAO());
+		LOG.info("Business Service2 DAO {}", businessService2.getDAOLength());
 	}
 
 
