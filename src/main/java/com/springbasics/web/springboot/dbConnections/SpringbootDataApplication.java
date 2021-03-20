@@ -25,6 +25,7 @@ public class SpringbootDataApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		LOG.info("List of registered people {}", person.retrieveAll());
+		LOG.info("Person with ID 1003:{} ", person.findById(1003));
 
 	}
 }

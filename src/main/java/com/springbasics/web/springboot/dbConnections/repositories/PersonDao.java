@@ -20,5 +20,12 @@ public class PersonDao {
         return people;
     }
 
+    public Person findById(int id) {
+        Person matchingPerson = jdbcTemplate.queryForObject("select * from person where id = ?",
+                new BeanPropertyRowMapper<>(Person.class), new Object[]{id});
+        //System.out.println(matchingPeople);
+        return matchingPerson;
+    }
+
 
 }
