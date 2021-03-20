@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 import java.util.Date;
 
-@SpringBootApplication
+//@SpringBootApplication
 public class SpringbootDataApplication implements CommandLineRunner {
 
 	@Autowired

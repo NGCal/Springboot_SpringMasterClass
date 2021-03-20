@@ -1,15 +1,31 @@
 package com.springbasics.web.springboot.dbConnections.Entities;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.transaction.Transactional;
 import java.util.Date;
 
+@Entity
+@Transactional
 public class Person {
+    @Id
+    @GeneratedValue
     long id;
+
     String name;
     String location;
     Date birthDate;
 
     public Person() {
 
+    }
+
+    public Person(String name, String location, Date birthDate) {
+
+        this.name = name;
+        this.location = location;
+        this.birthDate = birthDate;
     }
 
     public Person(long id, String name, String location, Date birthDate) {

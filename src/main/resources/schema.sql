@@ -7,4 +7,5 @@ CREATE TABLE person
     location   varchar(255) not null,
     birth_date timestamp,
     PRIMARY KEY (id)
-)
+);
+
