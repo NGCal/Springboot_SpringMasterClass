@@ -3,11 +3,12 @@ package com.springbasics.web.springboot.dbConnections.Entities;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.transaction.Transactional;
 import java.util.Date;
 
 @Entity
-@Transactional
+@NamedQuery(name = "retrieve_all", query = "SELECT p from Person p")
 public class Person {
     @Id
     @GeneratedValue

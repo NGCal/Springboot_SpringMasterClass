@@ -27,16 +27,16 @@ public class SpringbootJpaApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		//LOG.info("List of registered people {}", person.retrieveAll());
 
 		personRepository.update(new Person("Nancy", "Paris", new Date()));
 		personRepository.update(new Person("Monica", "Libano", new Date()));
 		personRepository.update(new Person("Bob", "Madrid", new Date()));
 
-//		LOG.info("Person with ID 1003:{} ", personRepository.findById(3));
-//		LOG.info("Person with ID 1002 before update:{} Was it updated?: {} 1002 record:{} ", personRepository.findById(1002),
-//				personRepository.update(new Person(1002, "Nancy", "Paris", new Date())),
-//				personRepository.findById(1002));
+		LOG.info("Person with ID 3:{} ", personRepository.findById(3));
+		LOG.info("Person with ID 2 before update:{} updated?: {}", personRepository.findById(2),
+				personRepository.update(new Person(2, "Tulile", "London", new Date())));
+		personRepository.remove(new Person(3, "Bob", "Madrid", new Date()));
+		LOG.info("List of registered people {}", personRepository.retrieveAll());
 
 	}
 }
