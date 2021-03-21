@@ -12,7 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.Date;
 
-@SpringBootApplication
+//@SpringBootApplication
 public class SpringbootJpaApplication implements CommandLineRunner {
 
 	@Autowired
